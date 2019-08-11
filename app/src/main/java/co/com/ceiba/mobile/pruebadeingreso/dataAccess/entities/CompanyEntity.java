@@ -1,12 +1,17 @@
-package co.com.ceiba.mobile.pruebadeingreso.model;
+package co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities;
 
-public class Company {
+import io.realm.RealmObject;
+
+public class CompanyEntity extends RealmObject {
 
     public String name;
     public String catchPhrase;
     public String bs;
 
-    public Company(String name, String catchPhrase, String bs) {
+    public CompanyEntity() {
+    }
+
+    public CompanyEntity(String name, String catchPhrase, String bs) {
         this.name = name;
         this.catchPhrase = catchPhrase;
         this.bs = bs;
@@ -36,12 +41,4 @@ public class Company {
         this.bs = bs;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", catchPhrase='" + catchPhrase + '\'' +
-                ", bs='" + bs + '\'' +
-                '}';
-    }
 }

@@ -8,4 +8,7 @@ public interface IUserDomain {
 
     List<User> getAllUsers();
     User getUserByName(String name);
+
+    boolean saveUsersCache(List<User> users);
+
 }

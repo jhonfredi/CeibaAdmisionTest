@@ -1,33 +1,33 @@
 package co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities;
 
-import co.com.ceiba.mobile.pruebadeingreso.model.Address;
-import co.com.ceiba.mobile.pruebadeingreso.model.Company;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class UserEntity extends RealmObject {
 
+    @PrimaryKey
     public Integer id;
     public String name;
     public String username;
     public String email;
-   // public Address address;
+    public AddressEntity address;
     public String phone;
     public String website;
-  //  public Company company;
+   public CompanyEntity company;
 
     public UserEntity() {
     }
 
-    public UserEntity(Integer id, String name, String username, String email, Address address, String phone, String website, Company company) {
+    public UserEntity(Integer id, String name, String username, String email, AddressEntity address, String phone, String website, CompanyEntity company) {
         this.id = id;
         this.name = name;
         this.username = username;
         this.email = email;
-        //this.address = address;
+        this.address = address;
         this.phone = phone;
         this.website = website;
-        //this.company = company;
+        this.company = company;
     }
 
     public Integer getId() {
@@ -62,6 +62,13 @@ public class UserEntity extends RealmObject {
         this.email = email;
     }
 
+    public AddressEntity getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressEntity address) {
+        this.address = address;
+    }
 
     public String getPhone() {
         return phone;
@@ -79,6 +86,11 @@ public class UserEntity extends RealmObject {
         this.website = website;
     }
 
+    public CompanyEntity getCompany() {
+        return company;
+    }
 
-
+    public void setCompany(CompanyEntity company) {
+        this.company = company;
+    }
 }

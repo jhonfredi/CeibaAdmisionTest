@@ -1,14 +1,20 @@
-package co.com.ceiba.mobile.pruebadeingreso.model;
+package co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities;
 
-public class Address {
+
+import io.realm.RealmObject;
+
+public class AddressEntity extends RealmObject {
 
     public String street;
     public String suite;
     public String city;
     public String zipcode;
-    public Geo geo;
+    public GeoEntity geo;
 
-    public Address(String street, String suite, String city, String zipcode, Geo geo) {
+    public AddressEntity() {
+    }
+
+    public AddressEntity(String street, String suite, String city, String zipcode, GeoEntity geo) {
         this.street = street;
         this.suite = suite;
         this.city = city;
@@ -48,13 +54,12 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public Geo getGeo() {
+    public GeoEntity getGeo() {
         return geo;
     }
 
-    public void setGeo(Geo geo) {
+    public void setGeo(GeoEntity geo) {
         this.geo = geo;
     }
-
 
 }
