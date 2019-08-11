@@ -3,17 +3,18 @@ package co.com.ceiba.mobile.pruebadeingreso.dataAccess;
 import java.util.List;
 
 import co.com.ceiba.mobile.pruebadeingreso.contracts.IDataAccessManager;
-import co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities.PostEntity;
-import co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities.UserEntity;
+import co.com.ceiba.mobile.pruebadeingreso.model.User;
+import co.com.ceiba.mobile.pruebadeingreso.model.Post;
 
 public class DataAccessLocalDB implements IDataAccessManager {
     @Override
-    public List<UserEntity> getAllUsers() {
+    public List<User> getAllUsers() {
         return null;
     }
 
     @Override
-    public List<PostEntity> getPostByUser(int userId) {
+    public List<Post> getPostByUser(int userId) {
         return null;
     }
 }
+

@@ -3,11 +3,9 @@ package co.com.ceiba.mobile.pruebadeingreso.contracts;
 import java.util.List;
 
 import co.com.ceiba.mobile.pruebadeingreso.model.User;
-import co.com.ceiba.mobile.pruebadeingreso.model.Post;
 
-public interface IDataAccessManager {
+public interface IUserDomain {
 
     List<User> getAllUsers();
-    List<Post> getPostByUser(int userId);
+    User getUserByName(String name);
 }
-
