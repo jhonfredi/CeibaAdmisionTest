@@ -22,6 +22,11 @@ public class DataAccessWebServices implements IDataAccessManager {
     public DataAccessWebServices() {
     }
 
+    /*
+    * getAllUsers
+    * Método sincrono para obtener todos los usuarios del web service
+    * Se mapea toda la data del usuario aunque no se necesite
+    * */
     @Override
     public List<User> getAllUsers() {
 
@@ -51,7 +56,11 @@ public class DataAccessWebServices implements IDataAccessManager {
         return allUsers;
     }
 
-
+    /*
+     * getPostByUser
+     * Método sincrono para obtener todos los post del usuario
+     *
+     * */
     @Override
     public List<Post> getPostByUser(int userId) {
 

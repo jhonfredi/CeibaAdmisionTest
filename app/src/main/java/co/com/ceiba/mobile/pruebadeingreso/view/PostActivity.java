@@ -31,33 +31,38 @@ public class PostActivity extends Activity {
     private UserDomain userDomain;
     //Adaptador de los post del usuario
     private PostAdapter postAdapter;
+    //Usuario actual
+    private int currentUserId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
         Bundle bundle= getIntent().getExtras();
-        int userId=-1;
         String name="",phone="",email="";
 
         dependencyInjection();
         if(bundle!=null){
-            userId = bundle.getInt("id");
+            currentUserId = bundle.getInt("id");
             name= bundle.getString("name");
             phone= bundle.getString("phone");
             email= bundle.getString("email");
         }
         bindUI(name,phone,email);
+    }
 
-        listPostByUser(userId);
+    @Override
+    protected void onStart() {
+        listPostByUser(currentUserId);
+        super.onStart();
     }
 
     /*
     * listPostByUser
     * Lista todos los post del usuario obtenido por parámetro
+    * puede que no se visualice el progressbar al ser una petición sincrona
     * */
     private void listPostByUser(int userId) {
-        progressBar.setVisibility(View.VISIBLE);
 
         List<Post> postByUser=userDomain.getPostByUser(userId);
 
@@ -72,10 +77,7 @@ public class PostActivity extends Activity {
         }else{
             tvNetError.setVisibility(View.VISIBLE);
         }
-
         progressBar.setVisibility(View.GONE);
-
-
     }
 
     private void bindUI(String name,String phone, String email) {
