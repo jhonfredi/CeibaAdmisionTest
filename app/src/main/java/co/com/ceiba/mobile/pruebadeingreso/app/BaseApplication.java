@@ -7,7 +7,6 @@ import io.realm.RealmConfiguration;
 
 public class BaseApplication extends Application{
 
-    public static AtomicInteger CityId=new AtomicInteger();
 
     @Override
     public void onCreate() {

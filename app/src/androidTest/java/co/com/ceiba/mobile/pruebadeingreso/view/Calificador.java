@@ -63,8 +63,6 @@ public class Calificador {
         keypressInputSearch("empty");
 
         onView(allOf(withText("List is empty"))).check(matches(withText("List is empty")));
-
-
     }
 
     @Test
@@ -77,7 +75,6 @@ public class Calificador {
         onView(allOf(withId(R.id.name))).check(matches(withText("Ervin Howell")));
         onView(allOf(withId(R.id.phone))).check(matches(withText("010-692-6593 x09125")));
         onView(allOf(withId(R.id.email))).check(matches(withText("Shanna@melissa.tv")));
-
 
     }
 

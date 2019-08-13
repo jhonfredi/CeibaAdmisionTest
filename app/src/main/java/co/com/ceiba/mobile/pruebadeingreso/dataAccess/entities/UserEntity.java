@@ -1,6 +1,9 @@
 package co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities;
 
 
+import com.google.gson.Gson;
+
+import co.com.ceiba.mobile.pruebadeingreso.model.User;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -92,5 +95,13 @@ public class UserEntity extends RealmObject {
 
     public void setCompany(CompanyEntity company) {
         this.company = company;
+    }
+
+    public String toJson(){
+        return new Gson().toJson(this);
+    }
+
+    public static UserEntity fromGson(String json){
+        return new Gson().fromJson(json, UserEntity.class);
     }
 }

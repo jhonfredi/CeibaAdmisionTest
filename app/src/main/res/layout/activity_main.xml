@@ -15,6 +15,7 @@
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         tools:ignore="UselessParent">
 
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayoutSearch"
             android:layout_width="match_parent"
@@ -25,16 +26,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_text_search"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName" />
 
         </android.support.design.widget.TextInputLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBarId"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/recyclerViewSearchResults"
+            android:layout_alignStart="@+id/textInputLayoutSearch"
+            android:layout_alignLeft="@+id/textInputLayoutSearch"
+            android:layout_alignEnd="@+id/textInputLayoutSearch"
+            android:layout_alignRight="@+id/textInputLayoutSearch"
+            android:layout_marginStart="156dp"
+            android:layout_marginLeft="156dp"
+            android:layout_marginEnd="175dp"
+            android:layout_marginRight="175dp"
+            android:layout_marginBottom="-183dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textViewListIsEMpty"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/textInputLayoutSearch"
+            android:layout_alignLeft="@+id/textInputLayoutSearch"
+            android:layout_alignEnd="@+id/textInputLayoutSearch"
+            android:layout_alignRight="@+id/textInputLayoutSearch"
+            android:layout_alignBottom="@+id/progressBarId"
+            android:layout_marginStart="102dp"
+            android:layout_marginLeft="102dp"
+            android:layout_marginEnd="117dp"
+            android:layout_marginRight="117dp"
+            android:layout_marginBottom="21dp"
+            android:gravity="center"
+            android:text="@string/list_is_empty"
+            android:visibility="invisible"
+            android:textSize="20sp"
+            />
+
         <android.support.v7.widget.RecyclerView
+
             android:id="@+id/recyclerViewSearchResults"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/textInputLayoutSearch"/>
+            android:layout_below="@id/textInputLayoutSearch"
+            android:layout_marginTop="16dp">
+
+
+        </android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
 

@@ -1,5 +1,9 @@
 package co.com.ceiba.mobile.pruebadeingreso.model;
 
+import com.google.gson.Gson;
+
+import co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities.PostEntity;
+
 public class Post {
 
     public Integer userId;
@@ -45,5 +49,13 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String toJson(){
+        return new Gson().toJson(this);
+    }
+
+    public static Post fromGson(String json){
+        return new Gson().fromJson(json, Post.class);
     }
 }

@@ -1,5 +1,9 @@
 package co.com.ceiba.mobile.pruebadeingreso.model;
 
+import com.google.gson.Gson;
+
+import co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities.UserEntity;
+
 public class User {
 
     public Integer id;
@@ -87,5 +91,13 @@ public class User {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public String toJson(){
+        return new Gson().toJson(this);
+    }
+
+    public static User fromGson(String json){
+        return new Gson().fromJson(json, User.class);
     }
 }

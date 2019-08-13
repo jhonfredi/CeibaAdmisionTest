@@ -1,10 +1,14 @@
 package co.com.ceiba.mobile.pruebadeingreso.dataAccess.entities;
 
+import com.google.gson.Gson;
+
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class PostEntity extends RealmObject {
 
     public Integer userId;
+    @PrimaryKey
     public Integer id;
     public String title;
     public String body;
@@ -49,5 +53,13 @@ public class PostEntity extends RealmObject {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String toJson(){
+        return new Gson().toJson(this);
+    }
+
+    public static PostEntity fromGson(String json){
+        return new Gson().fromJson(json, PostEntity.class);
     }
 }
